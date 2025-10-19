@@ -36,6 +36,7 @@ Questo DevContainer include:
 
 1. Assicurati di avere Docker e VS Code con l'estensione Dev Containers installati
 2. Clona questo repository e aprilo in VS Code
+  - Attenzione, per chi ha MACOS, per clonare usare `git clone --branch macos <linkHTTP>`, altrimenti clonate la repo main
 3. Quando richiesto, seleziona "Reopen in Container"
 4. Usa lo script `scarica-esame` per scaricare gli esami di tuo interesse
 5. Inizia a lavorare sugli esercizi!
