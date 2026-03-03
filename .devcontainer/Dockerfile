@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/devcontainers/base:noble
 
-ARG LIBCE_VERSION="4.3"
+ARG LIBCE_VERSION="4.4"
 ARG QEMU_VERSION="9.2.2-3"
 
 ENV HOME=/home/vscode/
