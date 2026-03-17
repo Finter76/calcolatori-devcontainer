@@ -3,11 +3,11 @@
     "build": {
         "dockerfile": "Dockerfile"
     },
-
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
     "workspaceFolder": "/workspace",
 
     "features": {
+        "ghcr.io/mcr.microsoft/devcontainers/features/desktop-lite:1": {}
     },
 
     "customizations": {
@@ -20,5 +20,6 @@
         }
     },
 
+    "forwardPorts": [6080],
     "remoteUser": "vscode"
 }
