@@ -41,6 +41,23 @@ Questo DevContainer include:
 4. Usa lo script `scarica-esame` per scaricare gli esami di tuo interesse
 5. Inizia a lavorare sugli esercizi!
 
+## Fix Visualizzazione
+**Interfaccia Grafica Integrata:** È stata integrata la feature `desktop-lite`, che fornisce un ambiente desktop virtuale accessibile comodamente dal browser per visualizzare l'output grafico di QEMU.
+In caso non si voglia visualizzare esternamente QEMU, ma ci si accontenta del terminale in VSCode, lanciare lo script `boot -c`; l'output sarà **esclusivamente in modalità testo**.
+
+### Come visualizzare lo schermo di QEMU su Browser
+Una volta che il container è completamente avviato e si lancia lo script di `boot`, la finestra di QEMU verrà renderizzata nel desktop virtuale del container. 
+Per interagire con la macchina virtuale:
+1. Apri il tuo browser web preferito.
+2. Vai all'indirizzo: [http://localhost:6080](http://localhost:6080) (la porta viene inoltrata automaticamente da VS Code).
+
+### Troubleshooting: Errore Certificati / SSL in fase di build
+Se durante la prima creazione del container (nello specifico durante il download della feature `desktop-lite`) il processo fallisce con un errore simile a **`unable to get issuer certificate`**, significa che la rete a cui sei connesso o il sistema macOS sta intercettando e bloccando il download sicuro di Node.js.
+
+Per risolvere, si può applicare **una** di queste due soluzioni:
+1. Apri le Impostazioni di VS Code, cerca **System Certificates** e disabilita/togli la spunta all'opzione `Http: System Certificates`. Riavvia VS Code chiudendolo completamente e lancia di nuovo il Rebuild. Dopo il Rebuild, **Riabilita l'opzione**.
+2. Commenta nel file `devcontainer.json` la riga contenente `"ghcr.io/mcr.microsoft/devcontainers/features/desktop-lite:1": {}` (ciò renderà inutilizzabile il collegamento con la finestra di QEMU virtuale)
+
 ## Licenza e contributi
 
 Questo progetto è rilasciato sotto licenza [GPLv3](https://www.gnu.org/licenses/gpl-3.0.txt).
