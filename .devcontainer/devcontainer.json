@@ -20,5 +20,7 @@
         }
     },
 
-    "remoteUser": "vscode"
+    "remoteUser": "vscode",
+
+    "postCreateCommand": "sed -i 's/\\r//' ~/CE/bin/scarica-esame && sed -i 's/socket,path=debug\\/.gdb-socket,server=on,wait=off/socket,host=127.0.0.1,port=1234,server=on,wait=off/' ~/CE/bin/boot && sed -i 's|if ! \\[ -e debug/.gdb-socket \\];|if false;|' ~/CE/bin/debug && sed -i 's|target remote debug/.gdb-socket|target remote 127.0.0.1:1234|' ~/CE/bin/debug"
 }
